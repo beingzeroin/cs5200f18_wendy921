@@ -1,4 +1,4 @@
-Connection String: <Your Connection String starts from here.>
+Connection String: <Your Connection String starts from here.> jdbc:mysql://cs5200-fall2018-congwenhe.czzfymjtq8o2.us-east-2.rds.amazonaws.com:3304/assignment2_congwen
 Hostname: <Hostname> cs5200-fall2018-congwenhe.czzfymjtq8o2.us-east-2.rds.amazonaws.com
 Port: <Port> 3304
 Username: <Username> CongwenHe
