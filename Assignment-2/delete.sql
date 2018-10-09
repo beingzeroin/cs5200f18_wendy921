@@ -22,13 +22,6 @@
     
     #c Delete page - Remove the last updated page in Wikipedia
     
-    #SET FOREIGN_KEY_CHECKS = 0; 
-    
-	#ALTER TABLE xxx
-    #DROP CONSTRAINT fk_name,
-    #ADD CONSTRAINT fk_name
-    #FOREIGN KEY (fk)  REFERENCES yyy(aaa)  ON DELETE CASCADE;
-    
 	delimiter //
     create trigger before_page_delete
     before delete on `page` for each row
