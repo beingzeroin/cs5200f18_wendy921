@@ -48,7 +48,7 @@
     
 	
     
-	#update
+    #update
     
     delimiter //
     
@@ -96,7 +96,7 @@
     
     #delete
     
-	delimiter //
+    delimiter //
     
     drop trigger if exists after_web_role_delete//
     
@@ -106,17 +106,17 @@
     
     delete from website_priviledge where website_priviledge.developer_id=old.developer_id 
 								and website_priviledge.web_id=old.web_id;
-	end//
+    end//
     
 	
     
    
-	#Page
+    #Page
     
     
     #insert
     
-	delimiter //
+    delimiter //
     
     drop trigger if exists after_page_role_insert//
     
@@ -131,7 +131,7 @@
     (null, new.developer_id, new.page_id,'update'), 
     (null, new.developer_id, new.page_id,'delete');
     
-	when new.role='admin'
+    when new.role='admin'
     then insert into page_priviledge values(null, new.developer_id, new.page_id, 'create'), 
     (null, new.developer_id, new.page_id,'read'), 
     (null, new.developer_id, new.page_id,'update'), 
@@ -147,7 +147,7 @@
     (null, new.developer_id, new.page_id,'read'), 
     (null, new.developer_id, new.page_id,'update');
     
-	 when new.role='reviewer'
+    when new.role='reviewer'
     then insert into page_priviledge values
     (null, new.developer_id, new.page_id,'read');
     
@@ -159,7 +159,7 @@
     
     #update
     
-	delimiter //
+    delimiter //
     
     drop trigger if exists after_page_role_update//
     
@@ -170,15 +170,15 @@
     delete from page_priviledge where page_priviledge.developer_id=old.developer_id 
 								and page_priviledge.page_id=old.page_id;
 							
-	begin
-	  case
+    begin
+    case
     when new.role='owner'
     then insert into page_priviledge values(null, new.developer_id, new.page_id, 'create'), 
     (null, new.developer_id, new.page_id,'read'), 
     (null, new.developer_id, new.page_id,'update'), 
     (null, new.developer_id, new.page_id,'delete');
     
-	  when new.role='admin'
+    when new.role='admin'
     then insert into page_priviledge values(null, new.developer_id, new.page_id, 'create'), 
     (null, new.developer_id, new.page_id,'read'), 
     (null, new.developer_id, new.page_id,'update'), 
@@ -194,7 +194,7 @@
     (null, new.developer_id, new.page_id,'read'), 
     (null, new.developer_id, new.page_id,'update');
     
-	  when new.role='reviewer'
+    when new.role='reviewer'
     then insert into page_priviledge values
     (null, new.developer_id, new.page_id,'read');
     
@@ -204,7 +204,7 @@
     
 	
 
-	  #delete
+    #delete
     
     delimiter //
     
@@ -217,4 +217,4 @@
     delete from page_priviledge where page_priviledge.developer_id=old.developer_id 
 								and page_priviledge.page_id=old.page_id;
                                 
- 	  end//
+    end//
