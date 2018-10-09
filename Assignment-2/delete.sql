@@ -13,6 +13,29 @@
 	#b Delete widget - Remove the last widget in the Contact page. 
     #The last widget is the one with the highest value in the order field
     
+     #update value of updated in page and website when delete widget  
+    
+    delimiter //
+    
+    drop trigger if exists after_widget_delete//
+    
+    create trigger after_widget_delete 
+    after delete on widget for each row
+    
+    begin
+    
+    update `page`
+    set `page`.updated=curdate()
+    where `page`.id=old.page_id;
+    
+    update website join `page`on (`page`.web_id=website.id)
+    set website.updated=curdate()
+    where website.id=(select web_id from `page` where `page`.id=old.page_id);
+    
+    end//
+    
+    ###################################
+    
     SET SQL_SAFE_UPDATES = 0;
     
     delete from widget
