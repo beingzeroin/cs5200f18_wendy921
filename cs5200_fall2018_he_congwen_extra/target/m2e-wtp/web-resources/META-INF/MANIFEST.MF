@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: cs5200_fall2018_he_congwen_extra
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: wendy
+Implementation-Vendor-Id: edu.northeastern.cs5200
+Build-Jdk: 1.8.0_144
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/cs5200_fall2018_he_congwen_extra
+Created-By: Maven Integration for Eclipse
+
